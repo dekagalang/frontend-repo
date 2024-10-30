@@ -50,6 +50,18 @@
 import Counter from "../components/Counter";
 
 const Home = () => {
+  const apiUrl = "http://127.0.0.1:5001/ebuddy-dfdc5/us-central1/helloWorld";
+  async function callApi() {
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.text();
+      console.log(data);
+    } catch (error) {
+      console.error("Error calling API:", error);
+    }
+  }
+
+  callApi();
   return (
     <div>
       <h1>Welcome to Next.js with Redux!</h1>
